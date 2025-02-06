@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { useGetSingleProductQuery } from "../../redux/productApi";
 import { FaStar, FaStarHalfAlt, FaRegStar, FaHeart } from "react-icons/fa";
-import icon_dilevery from "../../assets/images/icon-delivery.svg";
+import icon_dilevery from "../../assets/images/icon_delivery.svg";
 import icon_return from "../../assets/images/Icon_return.svg";
 import "../home/Loader.css";
 
