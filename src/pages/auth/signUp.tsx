@@ -54,11 +54,19 @@ const SignUp = () => {
 
   return (
     <div className="container mx-auto my-14 px-4">
-      <div className="flex flex-col md:flex-row items-center gap-28">
-        <img src={sign} alt="sign" />
+      <div className="flex flex-col md:flex-row items-center md:gap-28 gap-10">
+        <img 
+          src={sign} 
+          alt="sign" 
+          className="w-2/3 max-w-xs md:w-auto" 
+        />
         <div className="w-full max-w-sm">
-          <h2 className="text-4xl font-semibold mb-2">Log in to Exclusive</h2>
-          <p className="text-gray-600 mb-10 mt-3">Enter your details below</p>
+          <h2 className="text-3xl md:text-4xl font-semibold mb-2 text-center md:text-left">
+            Log in to Exclusive
+          </h2>
+          <p className="text-gray-600 mb-10 mt-3 text-center md:text-left">
+            Enter your details below
+          </p>
           <form onSubmit={handleSubmit} className="flex flex-col gap-4">
             <input
               type="text"
@@ -66,7 +74,7 @@ const SignUp = () => {
               placeholder="Username"
               value={formData.username}
               onChange={handleChange}
-              className="w-full border-b border-gray-300 focus:border-black outline-none py-2"
+              className="w-full border-b border-gray-300 focus:border-black outline-none py-2 text-sm md:text-base"
               required
             />
             <input
@@ -75,19 +83,19 @@ const SignUp = () => {
               placeholder="Password"
               value={formData.password}
               onChange={handleChange}
-              className="w-full border-b border-gray-300 focus:border-black outline-none py-2"
+              className="w-full border-b border-gray-300 focus:border-black outline-none py-2 text-sm md:text-base"
               required
             />
             {error && <p className="text-red-500 text-sm">{error}</p>}
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
               <button
                 type="submit"
-                className="bg-red-600 w-[143px] text-white font-semibold py-3 hover:bg-red-700 transition"
+                className="bg-red-600 w-full md:w-[143px] text-white font-semibold py-3 hover:bg-red-700 transition"
                 disabled={loading}
               >
                 {loading ? "Logging in..." : "Log in"}
               </button>
-              <p className="text-red-500 text-sm cursor-pointer hover:underline">
+              <p className="text-red-500 text-sm cursor-pointer hover:underline text-center md:text-left">
                 Forgot password?
               </p>
             </div>
@@ -96,6 +104,7 @@ const SignUp = () => {
       </div>
     </div>
   );
+  
 };
 
 export default SignUp;
