@@ -4,6 +4,8 @@ import { lazy } from "react"
 import ProductList from "../pages/home/Product"
 import ProductDetail from "../pages/detail/ProductDetail"
 import Wishlist from "../pages/wishlist/Wishlist"
+import SignUp from "../pages/auth/signUp"
+import Profile from "../pages/profile/Profile"
 
 
 const Home=lazy(()=>import('../pages/home/Home'))
@@ -53,7 +55,23 @@ const Routers = () => {
                             <Wishlist />
                           </SuspenseContainer>
                         )
-                    }
+                    },
+                    {
+                        path: "/signUp",
+                        element: (
+                          <SuspenseContainer>
+                            <SignUp/>
+                          </SuspenseContainer>
+                        )
+                    },
+                    {
+                        path: "/profile",
+                        element: (
+                          <SuspenseContainer>
+                            <Profile/>
+                          </SuspenseContainer>
+                        )
+                    },
                 ]
             }
         ])
